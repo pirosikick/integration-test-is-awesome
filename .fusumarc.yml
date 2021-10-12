@@ -1,5 +1,5 @@
 meta:
-  url:
+  url: https://pirosikick.github.io/integration-test-is-awesome/
   title: Integration Test、いいぞ
   description: FukuokaJS第14回の登壇資料です。Testing TrophyのIntegration Testがいいぞという話です。
   siteName:
@@ -15,3 +15,5 @@ slide:
     # https://prismjs.com/
     plugins: []
     theme: default # coy | dark | funky | okaidia | solarizedlight | tomorrow | twilight
+build:
+  publicPath: "/integration-test-is-awesome/"

@@ -1,4 +1,4 @@
-# Integration Test、いいぞ（仮）
+# Integration Test、いいぞ
 
 [#14 【オンライン開催】FukuokaJS - connpass](https://fukuokajs.connpass.com/event/225489/)
 
@@ -122,10 +122,10 @@ beforeEach(async () => {
 });
 
 test("calls fetchSomeData correctly", () => {
-	// 回数
-	expect(fetchSomeDataMock).toHaveBeenCalledTimes(1);
-	// 引数
-	expect(fetchSomeDataMock).toHaveBeenCalledWith(…);
+  // 回数
+  expect(fetchSomeDataMock).toHaveBeenCalledTimes(1);
+  // 引数
+  expect(fetchSomeDataMock).toHaveBeenCalledWith(…);
 });
 ```
 

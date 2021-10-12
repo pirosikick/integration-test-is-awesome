@@ -16,7 +16,7 @@
 - あんまり Integration Test の話をする人が巷に居ない気がしたので、いいぞ！と言いにきました。
 - 巷に溢れている & そんなこと言わなくてもみんなそう思っている場合は、休憩時間としてお使いください
 
-## Integration Test とは？
+## Integration Test とは？
 
 - 広義では「結合テスト」
 - 狭義（というか今日の発表のスコープ）では、Testing Trophy の Integration Test
@@ -47,11 +47,11 @@ beforeEach(async () => {
 });
 
 test("…", () => {
-	// 要素の取得
-	const submitButton = screen.getByRole("button", { name: "送信する" });
+  // 要素の取得
+  const submitButton = screen.getByRole("button", { name: "送信する" });
 
-	// 描画された内容を検証する（後述）
-	…
+  // 描画された内容を検証する（後述）
+  …
 });
 ```
 
@@ -108,17 +108,17 @@ import { fetchSomeData } from "./fetchSomeData";
 jest.mock("./fetchSomeData");
 const fetchSomeDataMock = fetchSomeData as jest.Mock;
 beforeEach(() => {
-	fetchSomeDataMock.mockClear();
+  fetchSomeDataMock.mockClear();
 });
 
 beforeEach(async () => {
-	fetchSomeDataMock.mockResolvedValue({ … });
+  fetchSomeDataMock.mockResolvedValue({ … });
 
-	screen.render(<HogeApp />);
+  screen.render(<HogeApp />);
 
-	await waitFor(() => {
-		expect(fetchSomeDataMock).toHaveBeenCalled();
-	})
+  await waitFor(() => {
+    expect(fetchSomeDataMock).toHaveBeenCalled();
+  });
 });
 
 test("calls fetchSomeData correctly", () => {

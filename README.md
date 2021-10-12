@@ -57,11 +57,40 @@ test("…", () => {
 
 ### 要素の取得
 
-https://testing-library.com/docs/react-testing-library/cheatsheet
+- https://testing-library.com/docs/react-testing-library/cheatsheet
 
-- 同期 or 非同期（getBy/queryBy or findBy）
+#### get/query/find, getAll/queryAll/findAll
+
+```ts
+/* 要素がなかった時にエラーを返す or null */
+getByRole("button", { name: "…" }); // throw an error
+queryByRole("button", { name: "…" }); // null
+
+/* 要素が複数ある時にエラーを返す or 全部取得 */
+// throw an error
+getByRole("button", { name: "…" }); // throw an error
+queryByRole("button", { name: "…" }); // throw an error
+// マッチする要素をすべて返す
+getAllByRole("button", { name: "…" });
+queryAllByRole("button", { name: "…" });
+
+/* 同期 */
+getByRole("button", { name: "…" });
+queryByRole("button", { name: "…" });
+
+/* 非同期(要素が現れるまで待つ) */
+await findByRole("button", { name: "…" });
+```
+
+#### By\*
+
 - 何を元に要素を探すか
-  - ByRole, ByLabelText, ByPlaceholderText ... etc
+  - ByLabelText, ByPlaceholderText, ByText, ByDisplayValue, ByAltText, ByTitle, ByRole, ByTestId
+
+```ts
+// "送信する"ボタンを取得
+getByRole("button", { name: "送信する" });
+```
 
 ### 描画された内容を検証する
 
